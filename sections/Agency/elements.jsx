@@ -1,48 +1,10 @@
 import styled from "styled-components";
-import { SectionHeading, SectionInnerHeading, SectionParagraph, SectionSubheading, SectionFlexContainer, SectionVerticalContainer } from "~/components"
+import { SectionHeading, SectionSubheading } from "~/components"
 
-export const MainContentContainer = styled(({ ...props }) => <SectionFlexContainer {...props} />)`
-  border:2px solid transparent;
-  width:${(props) => props.width || null} ;
-  border:${(props) => props.border || null} ;
-  padding: 1rem;
-  border-radius: 5%;
-  margin: 1rem 2rem;
-  background-color: rgba(200,200,200,0.25);
-  gap:1rem;
-  cursor: pointer;
-  transition: border-color 0.3s ease;
-  &:hover {
-    border: 2px solid blue;
-  }
-  @media only screen and (max-width: 1024px) {
-    margin-top: ${(props) => props.marginTop || null};
-  }
-`
-
-export const Text = styled(({ ...props }) => <SectionParagraph {...props} />)`
-  line-height: 1rem;
-  font-size: 0.85rem;
-  margin: 0.25rem 0;
-`
-
-export const TextTitle = styled(({ ...props }) => <SectionInnerHeading {...props} />)`
-  margin: 0;
-  font-weight: 600;
-  color: ${(props) => props.selected ? 'blue' : null};
-  text-decoration:  ${(props) => props.selected ? 'underline' : null};;
-`
-
-export const AgencyContainer = styled(({ ...props }) => <SectionFlexContainer {...props} />)`
-  
-  overflow: hidden;
-
-  @media only screen and (max-width: 1024px) {
-    flex-direction: column;
-  }
-`
-
-export const AgencyMainContainer = styled(({ ...props }) => <SectionVerticalContainer {...props} />)`
+export const AgencyMainContainer = styled(({ ...props }) => <div {...props} />)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
   justify-content: center;
   background-image: url('/img/background.png');
@@ -60,7 +22,10 @@ export const AgencyMainContainer = styled(({ ...props }) => <SectionVerticalCont
   }
 `
 
-export const TitleContainer = styled(({ ...props }) => <SectionVerticalContainer {...props} />)`
+export const TitleContainer = styled(({ ...props }) => <div {...props} />)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding:0 0 2rem 0;
 `
 export const Title = styled(({ ...props }) => <SectionHeading {...props} />)`
