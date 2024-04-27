@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import {
   StyledTextContainer,
@@ -11,13 +12,18 @@ import {
 } from "./elements";
 
 export const Hero = ({ image, title, description, ctaText, ...props }) => {
+
+
+
   return (
     <StyledContainer {...props}>
       <StyledTextContainer>
         <StyledTitle>{title}</StyledTitle>
         <StyledDescription>{description}</StyledDescription>
         <StyledCTAContainer>
-          <StyledGetStartedBtn>{ctaText}</StyledGetStartedBtn>
+        <Link href="/Agency">
+            <StyledGetStartedBtn>{ctaText}</StyledGetStartedBtn>
+          </Link>
         </StyledCTAContainer>
       </StyledTextContainer>
       <StyledImageContainer>

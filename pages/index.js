@@ -20,7 +20,6 @@ export default function Home() {
       </head>
       <div>
         <Hero {...heroProps} />
-        {/** Other sections */}
       </div>
     </>
   );
