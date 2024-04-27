@@ -1,11 +1,8 @@
 'use client'
 import Image from "next/image";
-import { StyledAgencyContainer, StyledH1, StyledP, StyledAgencyVerticalContainer, StyledTextContainer, StyledAgencyMainContainer } from './elements'
+import { Text, TextTitle, AgencyContainer, AgencyMainContainer, TitleContainer, Title, SubTitle, MainContentContainer } from './elements'
 import { FaGithub } from 'react-icons/fa';
-import { useEffect, useState } from "react";
-import "./Agency.module.css"
-import useWindowWidth from "../../hooks/useWindowWidth";
-import useWindowHeight from "../../hooks/useWindowHeight";
+import {useState } from "react";
 
 const texts = [
     {
@@ -25,9 +22,6 @@ const texts = [
 export const AgencyPage = ({ image, title, description, ctaText, ...props }) => {
     const [activeIndex, setActiveIndex] = useState(null);
     const [hoveredIndex, setHoveredIndex] = useState(null);
-    const windowWidth = useWindowWidth();
-
-    let isMobile = windowWidth <= 1024
 
     const handleTextClick = (index) => {
         setActiveIndex(index === activeIndex ? null : index);
@@ -40,14 +34,15 @@ export const AgencyPage = ({ image, title, description, ctaText, ...props }) => 
         setHoveredIndex(null);
     };
     return (
-        <StyledAgencyMainContainer>
-            <StyledAgencyVerticalContainer>
-                <StyledH1>Managed agency selection</StyledH1>
-                <StyledP>Strenghen your onboarding process</StyledP>
-            </StyledAgencyVerticalContainer>
+        <AgencyMainContainer>
+
+            <TitleContainer>
+                <Title>Managed agency selection</Title>
+                <SubTitle>Strenghen your onboarding process</SubTitle>
+            </TitleContainer>
 
             <div>
-                <StyledAgencyContainer>
+                <AgencyContainer>
                     <div>
                         <Image
                             alt="Image"
@@ -58,13 +53,10 @@ export const AgencyPage = ({ image, title, description, ctaText, ...props }) => 
                     </div>
                     <div>
                         {texts.map((text, index) => (
-                            <StyledTextContainer style={
-                                {
-                                    marginTop: `${isMobile ? (40 - (index * 10)) + 'px' : ''}`,
-                                    width: `${300 + (index * 20)}px`,
-                                    border: `2px solid ${activeIndex === index || hoveredIndex === index ? 'blue' : 'transparent'}`
-                                }
-                            }
+                            <MainContentContainer
+                                marginTop={`${(40 - (index * 10)) + 'px'}`}
+                                width={`${300 + (index * 20)}px`}
+                                border={`2px solid ${activeIndex === index || hoveredIndex === index ? 'blue' : 'transparent'}`}
                                 onMouseEnter={() => handleTextHover(index)}
                                 onMouseLeave={handleTextLeave}
                                 onClick={() => handleTextClick(index)}
@@ -73,14 +65,14 @@ export const AgencyPage = ({ image, title, description, ctaText, ...props }) => 
                                     <FaGithub style={{ height: "50px", width: "75px" }} />
                                 </div>
                                 <div>
-                                    <h4 style={{ margin: 0, fontWeight: 'bold' }}>{text.name}</h4>
-                                    <p style={{ margin: "0.25rem 0" }}>{text.description}</p>
+                                    <TextTitle selected={activeIndex === index || hoveredIndex === index}>{text.name}</TextTitle>
+                                    <Text>{text.description}</Text>
                                 </div>
-                            </StyledTextContainer>
+                            </MainContentContainer>
                         ))}
                     </div>
-                </StyledAgencyContainer >
-            </div>
-        </StyledAgencyMainContainer >
+                </AgencyContainer >
+            </div >
+        </AgencyMainContainer >
     );
 };
