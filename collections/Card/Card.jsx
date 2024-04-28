@@ -7,7 +7,6 @@ export const Card = ({ texts, image, handleTextClick, handleTextHover, handleTex
         <AgencyCardContainer>
             <div>
                 <Image
-                    responsive
                     alt="Image"
                     src={image}
                     width="250px"
