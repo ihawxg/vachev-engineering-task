@@ -28,10 +28,7 @@ export const AgencyPage = ({ image, title,subTitle, texts }) => {
                     texts={texts}
                     image={image}
                     activeIndex={activeIndex}
-                    hoveredIndex={hoveredIndex}
                     handleTextClick={handleTextClick}
-                    handleTextHover={handleTextHover}
-                    handleTextLeave={handleTextLeave}
                 />
             </div>
         </AgencyMainContainer >

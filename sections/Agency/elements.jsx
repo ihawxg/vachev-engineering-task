@@ -31,6 +31,7 @@ export const TitleContainer = styled(({ ...props }) => <div {...props} />)`
 export const Title = styled(({ ...props }) => <SectionHeading {...props} />)`
   margin:0;
   line-height:2.5rem;
+  text-align: center;
   @media only screen and (max-width: 1024px) {
     font-size: 2rem;
     line-height: 2rem;
@@ -39,6 +40,7 @@ export const Title = styled(({ ...props }) => <SectionHeading {...props} />)`
 
 export const SubTitle = styled(({ ...props }) => <SectionSubheading {...props} />)`
   margin:0px;
+  text-align: center;
   @media only screen and (max-width: 1024px) {
     font-size: 1rem;
     line-height: 1.875rem;

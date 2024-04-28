@@ -4,15 +4,15 @@ import { AgencyPage } from "../../sections";
 const texts = [
     {
         name: 'Brief',
-        description: "Complete brief writing or simple duidance on what to include, we've got you covered"
+        description: "Complete <strong>brief writing or simple duidance</strong> on what to include, we've got you covered"
     },
     {
         name: 'Search',
-        description: "In-depth agency search covering; criteria matching,door knocking and due-diligence vetting"
+        description: "In-depth agency search covering; <strong>criteria matching</strong>,door knocking and due-diligence vetting"
     },
     {
         name: 'Pitch',
-        description: "Comprehensive pitch management, including comms, diary management and pitch hosting."
+        description: "Comprehensive <strong>pitch management</strong>, including comms, diary management and pitch hosting."
     },
 ]
 

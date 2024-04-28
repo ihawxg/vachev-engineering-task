@@ -17,6 +17,17 @@ export const MainContentContainer = styled(({ ...props }) => <div {...props} />)
   &:hover {
     border: 2px solid blue;
   }
+  @media only screen and (max-width: 1024px) {
+    margin: 1rem 0;
+  }
+  &:hover{
+    border: 2px solid 'blue';
+    h4{
+    color: blue;
+    text-decoration: underline;
+  }
+  }
+
 `
 
 export const Text = styled(({ ...props }) => <SectionParagraph {...props} />)`
@@ -70,6 +81,21 @@ export const CardContainer = styled(({ ...props }) => <div {...props} />)`
     & > :nth-child(3) {
       width: 360px;
       margin-top: 20px;
+    }
+  }
+
+  @media only screen and (max-width: 370px) {
+    margin: 0 1rem;
+    & > :nth-child(1) {
+      width: 80%;
+    }
+
+    & > :nth-child(2) {
+      width: 90%;
+    }
+
+    & > :nth-child(3) {
+      width: 100%;
     }
   }
 
